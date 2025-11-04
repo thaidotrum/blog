@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiến Thức Mỗi Ngày</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">
+          <span class="brand__logo" aria-hidden="true">✍️</span>
+          <div>
+            <p class="brand__label">Blog chia sẻ kiến thức</p>
+            <h1 class="brand__title">Kiến Thức Mỗi Ngày</h1>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="Điều hướng chính">
+          <a href="#chu-de">Chủ đề</a>
+          <a href="#bai-viet-moi">Bài viết mới</a>
+          <a href="#ban-tin">Bản tin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero__content">
+            <h2 id="hero-heading">Chia sẻ kiến thức, lan tỏa cảm hứng</h2>
+            <p>
+              Đây là không gian để mình ghi lại những kiến thức học được mỗi ngày.
+              Từ lập trình, kỹ năng sống cho đến những cuốn sách hay. Mời bạn cùng
+              khám phá!
+            </p>
+            <a class="hero__cta" href="#bai-viet-moi">Đọc bài viết mới nhất</a>
+          </div>
+          <div class="hero__highlight" role="img" aria-label="Minh họa về viết blog">
+            <div class="hero__card">
+              <p class="hero__category">Front-end</p>
+              <h3 class="hero__title">5 mẹo React giúp bạn viết code sạch hơn</h3>
+              <p class="hero__meta">Đăng ngày 12/03/2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="chu-de" class="topics" aria-labelledby="topics-heading">
+        <div class="container">
+          <h2 id="topics-heading">Chủ đề nổi bật</h2>
+          <p class="topics__intro">
+            Mình tập trung vào những chủ đề giúp bạn phát triển bản thân toàn diện.
+            Mỗi bài viết đều đi kèm ví dụ thực tế và những gợi ý áp dụng ngay.
+          </p>
+          <div class="topics__grid">
+            <article class="topic-card">
+              <h3>Lập trình &amp; Công nghệ</h3>
+              <p>
+                Các bài viết về web, cloud và automation, kèm snippets dễ áp dụng
+                vào dự án thực tế.
+              </p>
+            </article>
+            <article class="topic-card">
+              <h3>Sự nghiệp &amp; Thói quen</h3>
+              <p>
+                Làm thế nào để quản lý thời gian, xây dựng thói quen và làm việc
+                hiệu quả.
+              </p>
+            </article>
+            <article class="topic-card">
+              <h3>Đọc sách &amp; Suy ngẫm</h3>
+              <p>
+                Tổng hợp các bài review sách, những bài học rút ra và cách áp dụng
+                vào đời sống.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bai-viet-moi" class="posts" aria-labelledby="posts-heading">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="posts-heading">Bài viết mới nhất</h2>
+            <div class="filters" role="list">
+              <button class="filter-btn is-active" data-category="tat-ca">Tất cả</button>
+              <button class="filter-btn" data-category="lap-trinh">Lập trình</button>
+              <button class="filter-btn" data-category="thoi-quen">Thói quen</button>
+              <button class="filter-btn" data-category="sach">Sách</button>
+            </div>
+          </div>
+          <div class="posts__grid" id="posts-container" role="list"></div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="ban-tin" aria-labelledby="newsletter-heading">
+        <div class="container">
+          <div class="newsletter__content">
+            <h2 id="newsletter-heading">Nhận bản tin mỗi tuần</h2>
+            <p>
+              Đăng ký để nhận email tổng hợp những bài viết mới, tài nguyên hữu ích
+              và gợi ý học tập phù hợp với bạn.
+            </p>
+            <form class="newsletter__form">
+              <label class="sr-only" for="email">Email của bạn</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@vidu.com"
+                required
+              />
+              <button type="submit">Đăng ký ngay</button>
+            </form>
+            <p class="newsletter__meta">
+              Mình tôn trọng sự riêng tư và bạn có thể hủy đăng ký bất cứ lúc nào.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2024 Kiến Thức Mỗi Ngày. Viết bởi Tuấn.</p>
+        <div class="site-footer__links">
+          <a href="#">Về mình</a>
+          <a href="#">Liên hệ</a>
+          <a href="#">RSS</a>
+        </div>
+      </div>
+    </footer>
+
+    <template id="post-template">
+      <article class="post-card" role="listitem">
+        <p class="post-card__category"></p>
+        <h3 class="post-card__title"></h3>
+        <p class="post-card__excerpt"></p>
+        <div class="post-card__meta"></div>
+        <a class="post-card__link" href="#">Đọc tiếp</a>
+      </article>
+    </template>
+
+    <script src="assets/scripts.js" defer></script>
+  </body>
+</html>
